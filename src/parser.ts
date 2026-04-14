@@ -18,7 +18,7 @@ import type {
 import { classifyTurn } from './classifier.js'
 
 function getClaudeDir(): string {
-  return join(homedir(), '.claude')
+  return process.env['CLAUDE_CONFIG_DIR'] || join(homedir(), '.claude')
 }
 
 function getProjectsDir(): string {
